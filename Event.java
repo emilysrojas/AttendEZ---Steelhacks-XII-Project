@@ -14,7 +14,7 @@ public class Event {
         date = d;
         time = t;
         place = p;
-        eventid +=1; //check if this is how to make id
+        // eventid +=1; //check if this is how to make id
     }
 
     //next few methods are just accessors
