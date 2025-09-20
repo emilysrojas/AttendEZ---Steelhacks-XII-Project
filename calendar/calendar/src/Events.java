@@ -37,13 +37,13 @@ public class Events extends JPanel{
             event.setBackground(Color.decode("#f0f0f0"));
             event.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-            JLabel title = new JLabel(events.get(i).getName());
+            JLabel title = new JLabel("Event Title");
             title.setBorder(BorderFactory.createEmptyBorder(0,15,0,15));
             title.setFont(new Font("Noto Sans", Font.PLAIN, 18));
             title.setForeground(Color.black);
             event.add(title);
 
-            JLabel time = new JLabel(events.get(i).getDate()+"");
+            JLabel time = new JLabel("Event Time");
             time.setBorder(BorderFactory.createEmptyBorder(5,15,4,15));
             time.setFont(new Font("Noto Sans", Font.PLAIN, 14));
             time.setForeground(Color.DARK_GRAY);
