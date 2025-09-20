@@ -30,15 +30,7 @@ public class Calendar extends JPanel{
         add(top, BorderLayout.NORTH);
         String[] daysList = {"Mon","Tu","Wed","Thu","Fri","Sat","Sun"};
         for (int i = 0; i < daysList.length; i++){
-            JLabel lb = new JLabel(daysList[i]+"");
-            lb.setHorizontalAlignment(JLabel.CENTER);
-            lb.setFont(new Font("Noto Sans", Font.PLAIN, 20));
-            lb.setOpaque(true);
-            lb.setBackground(Color.decode("#f0f0f0"));
-            lb.setForeground(Color.black);
-            lb.setVerticalAlignment(JLabel.NORTH);
-            lb.setCursor(new Cursor(Cursor.HAND_CURSOR));
-            days.add(lb);
+            days.add(new DayLabel(daysList[i], Color.decode("#f0f0f0"), Color.black, true));
         }
 
         add(days, BorderLayout.CENTER);
