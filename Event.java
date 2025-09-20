@@ -1,21 +1,20 @@
-public class Event {
-    //variables for event
+import java.util.Date;
+
+public class Event{
+
     public String name;
     public String host;
-    public int date;
-    public int time;
+    public Date date;
     public String place;
-    public static int eventid;
+    public String description;
     
-    //constructing new event object
-    public Event(String n, String h, int d, int t, String p){
+
+    public Event(String n, String h, Date d, String p){
         name = n;
         host = h;
         date = d;
-        time = t;
         place = p;
-        // eventid +=1; //check if this is how to make id
-    }
+   }
 
     //next few methods are just accessors
     public String getName(){
@@ -26,12 +25,8 @@ public class Event {
         return host;
     }
 
-    public int getDate(){
+    public Date getDate(){
         return date;
-    }
-
-    public int getTime(){
-        return time;
     }
 
     public String getPlace(){
@@ -39,7 +34,6 @@ public class Event {
     }
 
 
-    //next few methods are to change object variables
     public void setName(String n){
         name = n;
     }
@@ -48,25 +42,15 @@ public class Event {
         host = h;
     }
 
-    public void setDate(int d){
+    public void setDate(Date d){
         date = d;
-    }
-
-    public void setTime(int t){
-        time = t;
     }
 
     public void setPlace(String p){
         place = p;
     }
 
-
-//     //next method determine point value for event
-//     public int getPoint(){
-//         return 
-//     }
-
     public String toString(){
-        return host + " is hosting " + name + " on " + date + " at " + time + " at " + place;
+        return host + " is hosting " + name + " on " + date + "at " + place;
     }
 }
