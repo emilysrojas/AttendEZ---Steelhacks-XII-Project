@@ -1,8 +1,6 @@
 public class Main {
     public static void main(String [] args){
-        System.out.println("This is Emily");
-        System.out.println("This is Lauren");
-        System.out.println("This is Lan");
-        System.out.println("This is Jennifer");
+        Event a = new Event("Birthday Party", "Lauren", 12226, 5, "house");
+        System.out.println(a.toString());
     }
 }
