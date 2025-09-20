@@ -1,13 +1,27 @@
 public class User {
-    public String username;
     private int userID;
-    private int password;
+    public int points;
+    public int attendanceTotal;
 
-    public User(String username, int password){
-        this.username=username;
-        this.password=password;
-
-        
+    public User(int id, int p, int a){
+        userID = id;
+        points = p;
+        attendanceTotal = a;
     }
 
+    public void addPoints(int p){
+        points += p;
+    }
+
+    public void addAttendance(int a){
+        attendanceTotal += a;
+    }
+
+    public int getPoints(){
+        return points;
+    }
+
+    public int getAttendance(){
+        return attendanceTotal;
+    }
 }
