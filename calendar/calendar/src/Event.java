@@ -1,31 +1,19 @@
-package backend;
-
 import java.util.Date;
 
 public class Event{
-    private static int idCounter = 0;
-    public int eventUniqueID;
+
     public String name;
     public String host;
     public Date date;
     public String place;
-    public String eventCode;
-
+    public String description;
     
 
     public Event(String n, String h, Date d, String p){
-        this.eventUniqueID=idCounter++;
         name = n;
         host = h;
         date = d;
         place = p;
-
-        char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
-        for (int i = 0; i < 6; i++) {
-            char c = chars[(int) (Math.random() * chars.length)];
-            eventCode += c;
-        }
-
    }
 
     //next few methods are just accessors
@@ -65,8 +53,5 @@ public class Event{
     public String toString(){
         return host + " is hosting " + name + " on " + date + "at " + place;
     }
-
-    public String getEventCode(){
-        return eventCode;
-    }
 }
+
