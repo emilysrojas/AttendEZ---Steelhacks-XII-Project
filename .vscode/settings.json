@@ -1,3 +1,17 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.project.sourcePaths": [
+        ".",
+        "calendar/calendar/src"
+    ],
+    "java.project.referencedLibraries": [
+        "calendar/calendar/lib/javafx-swt.jar",
+        "calendar/calendar/lib/javafx.base.jar",
+        "calendar/calendar/lib/javafx.controls.jar",
+        "calendar/calendar/lib/javafx.fxml.jar",
+        "calendar/calendar/lib/javafx.graphics.jar",
+        "calendar/calendar/lib/javafx.media.jar",
+        "calendar/calendar/lib/javafx.swing.jar",
+        "calendar/calendar/lib/javafx.web.jar"
+    ]
 }

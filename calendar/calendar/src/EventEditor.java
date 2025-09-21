@@ -9,10 +9,21 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.util.Date;
+import java.awt.event.ActionEvent;
 
-public class EventEditor{
+public class EventEditor implements ActionListener { 
+    JTextField title;
+    JTextField time;
+    JTextField description;
+    Date day;
+    Events events;
 
-    public EventEditor(){
+    public EventEditor(Events events, Date d) {
+        this.day = d;
+        this.events = events;
+
         JFrame frame = new JFrame("Calendar");
         frame.setSize(700,350);
         frame.setLocationRelativeTo(null);
@@ -30,7 +41,7 @@ public class EventEditor{
         l1.setHorizontalAlignment(JLabel.CENTER);
         center.add(l1);
 
-        JTextField title = new JTextField();
+        title = new JTextField();
         title.setFont(new Font("Noto Sans", Font.PLAIN, 20));
         title.setHorizontalAlignment(JLabel.CENTER);
         center.add(title);
@@ -40,7 +51,7 @@ public class EventEditor{
         l2.setHorizontalAlignment(JLabel.CENTER);
         center.add(l2);
 
-        JTextField time = new JTextField();
+        time = new JTextField();
         time.setFont(new Font("Noto Sans", Font.PLAIN, 20));
         time.setHorizontalAlignment(JLabel.CENTER);
         center.add(time);
@@ -50,7 +61,7 @@ public class EventEditor{
         l3.setHorizontalAlignment(JLabel.CENTER);
         center.add(l3);
 
-        JTextField description = new JTextField();
+        description = new JTextField();
         description.setFont(new Font("Noto Sans", Font.PLAIN, 20));
         description.setHorizontalAlignment(JLabel.CENTER);
         center.add(description);
@@ -72,10 +83,16 @@ public class EventEditor{
         save.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         bottom.add(save);
 
+        save.addActionListener(this);
+
         mainPanel.add(bottom, BorderLayout.SOUTH);
 
         frame.getContentPane().add(mainPanel);
 
         frame.setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        events.add(new Event())
     }
 }
