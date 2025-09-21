@@ -12,7 +12,6 @@ public class DayLabel extends JLabel{
         setOpaque(true);
         setBackground(background);
         setForeground(foreground);
-        setVerticalAlignment(JLabel.NORTH);
         if (btn) setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
 }

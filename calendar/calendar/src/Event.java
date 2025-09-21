@@ -1,5 +1,8 @@
-package backend;
 
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 
 public class Event{
@@ -7,17 +10,18 @@ public class Event{
     public int eventUniqueID;
     public String name;
     public String host;
-    public Date date;
+    public LocalDateTime dateTime;
     public String place;
     public String eventCode;
+    private String description;
 
     
 
-    public Event(String n, String h, Date d, String p){
+    public Event(String n, String description, String h, LocalDateTime dateTime, String p){
         this.eventUniqueID=idCounter++;
         name = n;
         host = h;
-        date = d;
+        this.dateTime = dateTime;
         place = p;
 
         char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".toCharArray();
@@ -27,6 +31,14 @@ public class Event{
         }
 
    }
+    public Event(LocalDate date){
+            dateTime = LocalDateTime.of(date, LocalTime.now());
+        }
+    public Event(){}
+
+    public int getID(){
+        return eventUniqueID;
+    }
 
     //next few methods are just accessors
     public String getName(){
@@ -37,8 +49,8 @@ public class Event{
         return host;
     }
 
-    public Date getDate(){
-        return date;
+    public LocalDateTime getDate(){
+        return dateTime;
     }
 
     public String getPlace(){
@@ -54,8 +66,8 @@ public class Event{
         host = h;
     }
 
-    public void setDate(Date d){
-        date = d;
+    public void setDate(LocalDateTime d){
+        dateTime = d;
     }
 
     public void setPlace(String p){

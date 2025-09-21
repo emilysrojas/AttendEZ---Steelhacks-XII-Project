@@ -3,6 +3,8 @@ import javax.swing.JPanel;
 
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.time.LocalDate;
+
 
 public class App {
     public static void main(String[] args){
@@ -14,7 +16,11 @@ public class App {
 
         JPanel mainPanel = new JPanel(new GridLayout(1,2,0,0));
 
-        mainPanel.add(new Calendar());
+        //Events events = new Events();
+
+        LocalDate date = LocalDate.now();
+        
+        mainPanel.add(new Calendar(date.getYear(), date.getMonthValue(),date, mainPanel));
         mainPanel.add(new Events());
 
         frame.getContentPane().add(mainPanel);

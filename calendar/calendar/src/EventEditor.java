@@ -1,3 +1,5 @@
+
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -9,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.awt.event.ActionEvent;
@@ -92,7 +95,9 @@ public class EventEditor implements ActionListener {
         frame.setVisible(true);
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Bums");
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }
