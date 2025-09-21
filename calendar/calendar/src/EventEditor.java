@@ -93,6 +93,6 @@ public class EventEditor implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        events.add(new Event())
+        System.out.println("Bums");
     }
 }
