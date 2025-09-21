@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 
 public class Calendar extends JPanel{
     public Calendar(int year, int month, LocalDate selectedDay, JPanel mainPanel){
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         setLayout(new BorderLayout(30, 30));
         setBorder(BorderFactory.createEmptyBorder(40,20,30,20));
         setBackground((Color.white));
@@ -72,7 +73,7 @@ public class Calendar extends JPanel{
                     mainPanel.removeAll();
                     LocalDate selected = LocalDate.of(year, month, day);
                     mainPanel.add(new Calendar(year, month, selected, mainPanel));
-                    mainPanel.add(new Events());
+                    mainPanel.add(new Events(selectedDay, mainPanel));
                     mainPanel.revalidate();
                 }
     

@@ -12,21 +12,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import java.awt.event.ActionListener;
 import java.util.Date;
-import java.awt.event.ActionEvent;
 
-public class EventEditor implements ActionListener { 
-    JTextField title;
-    JTextField time;
-    JTextField description;
-    Date day;
-    Events events;
+public class EventEditor { 
 
-    public EventEditor(Events events, Date d) {
-        this.day = d;
-        this.events = events;
-
+    public EventEditor(Event e, JPanel parent) {
+        JTextField title;
+        JTextField time;
+        JTextField description;
+        Date day;
+        Events events;
         JFrame frame = new JFrame("Calendar");
         frame.setSize(700,350);
         frame.setLocationRelativeTo(null);
@@ -59,7 +54,7 @@ public class EventEditor implements ActionListener {
         time.setHorizontalAlignment(JLabel.CENTER);
         center.add(time);
 
-        JLabel l3 = new JLabel("Description: ");
+        JLabel l3 = new JLabel("Event Code: ");
         l3.setFont(new Font("Noto Sans", Font.PLAIN, 20));
         l3.setHorizontalAlignment(JLabel.CENTER);
         center.add(l3);
@@ -86,18 +81,11 @@ public class EventEditor implements ActionListener {
         save.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         bottom.add(save);
 
-        save.addActionListener(this);
 
         mainPanel.add(bottom, BorderLayout.SOUTH);
 
         frame.getContentPane().add(mainPanel);
 
         frame.setVisible(true);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
     }
 }
