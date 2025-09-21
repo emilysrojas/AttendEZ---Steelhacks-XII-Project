@@ -3,7 +3,8 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.util.Date;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Event{
     private static int idCounter = 0; //static counter to assign unique IDs to each event
@@ -13,19 +14,19 @@ public class Event{
     public LocalDateTime dateTime;
     public String place;
     public String eventCode; // this is what people will use to join the event
-    private String description;
     public int eventPoints; // points associated with the event
 
     
     //constructors
-    public Event(String n, String description, String h, LocalDateTime dateTime, String p){
+
+    //constructor with random code
+    public Event(String n, String h, LocalDateTime dateTime, String p) throws IOException{
         this.eventUniqueID=idCounter++; //assign the current counter value as the event ID, then increment the counter
         name = n;
         host = h;
         this.dateTime = dateTime;
         place = p;
         eventCode = "";
-        this.description = description;
         eventPoints=10; //default points for an event is 10
         
         //generate a random 6 character event code
@@ -35,7 +36,32 @@ public class Event{
             eventCode += c;
         }
 
+        //write event details to a file
+        FileWriter writer = new FileWriter("events.txt", true); //open in append mode
+        writer.write(eventCode+"," +eventPoints+"\n"); //write event code and points to file
+        writer.close();
+
    }
+
+   //constructor with specified code
+   public Event(String n, String h, LocalDateTime dateTime, String p, String code) throws IOException{
+        this.eventUniqueID=idCounter++; //assign the current counter value as the event ID, then increment the counter
+        name = n;
+        host = h;
+        this.dateTime = dateTime;
+        place = p;
+        eventCode = code;
+        eventPoints=10; //default points for an event is 10
+        
+        //write event details to a file
+        FileWriter writer = new FileWriter("events.txt", true); //open in append mode
+        writer.write(eventCode+"," +eventPoints+"\n"); //write event code and points to file
+        writer.close();
+
+   }
+
+
+
     public Event(LocalDate date){
             eventUniqueID=idCounter++;
             name = "Untitled Event";
@@ -76,16 +102,13 @@ public class Event{
         return eventPoints;
     }
 
+
     public String toString(){
         return host + " is hosting " + name + " on " + dateTime + "at " + place;
     }
 
     public String getEventCode(){
         return eventCode;
-    }
-
-    public String getDescription(){
-        return description;
     }
 
     // methods to modify event details
