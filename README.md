@@ -1,4 +1,4 @@
-#   ScheduleEZ - An interactive points calendar
+#   AttendEZ- An interactive points calendar
 Emily Rojas Aguilera - esr107@pitt.edu
 Jennifer Zhang - jez115@pitt.edu
 Lauren Mulcahy - lcm115@pitt.edu
