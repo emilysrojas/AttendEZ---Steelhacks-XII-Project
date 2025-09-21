@@ -35,6 +35,6 @@ public class Calendar extends JPanel{
 
         // add(days, BorderLayout.CENTER);
 
-        EventEditor n = new EventEditor();
+        EventEditor n = new EventEditor(null, null);
     }
 }
