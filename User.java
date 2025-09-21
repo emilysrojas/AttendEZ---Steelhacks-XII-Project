@@ -1,20 +1,20 @@
 public class User {
-    private int userID;
+    private static int idCounter = 0; // static counter to assign unique IDs
+    private int userID; // unique ID for each user
+    public String username;
     public int points;
     public int attendanceTotal;
 
-    public User(int id, int p, int a){
-        userID = id;
-        points = p;
-        attendanceTotal = a;
+    public User(String username){
+        this.userID = idCounter++;
+        this.username = username;
+        points = 0;
+        attendanceTotal = 0;
     }
 
-    public void addPoints(int p){
-        points += p;
-    }
-
-    public void addAttendance(int a){
-        attendanceTotal += a;
+    public void addAttendance(Event e){
+        attendanceTotal += 1;
+        points += e.getPoints();
     }
 
     public int getPoints(){
@@ -23,5 +23,12 @@ public class User {
 
     public int getAttendance(){
         return attendanceTotal;
+    }
+    public int getID(){
+        return userID;
+    }
+
+    public String getUsername(){
+        return username;
     }
 }
