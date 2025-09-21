@@ -75,7 +75,7 @@ public class Event{
     }
 
     public String toString(){
-        return host + " is hosting " + name + " on " + date + "at " + place;
+        return host + " is hosting " + name + " on " + dateTime + "at " + place;
     }
 
     public String getEventCode(){
