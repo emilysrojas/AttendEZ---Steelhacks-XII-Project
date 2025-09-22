@@ -41,7 +41,7 @@ public class Events extends JPanel{
 
             JScrollPane sp = new JScrollPane(list);
 
-            for (int i=0; i<29; i++){
+            for (int i=0; i<5; i++){
             final int j = i;
             JPanel event = new JPanel(new GridLayout(2,1));
             event.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10,10,10,10), BorderFactory.createMatteBorder(0,10,0,0, Color.decode("#00d1e8"))));
